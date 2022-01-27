@@ -1,1 +1,43 @@
-<p>signup works!</p>
+<section class="vh-100" style="background-color: #508bfc;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="card shadow-2-strong" style="border-radius: 1rem;">
+            <div class="card-body p-4 text-center">
+  
+              <h3 class="mb-0">Sign Up</h3>
+              <form [formGroup]=signupForm>
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="typeEmailX-2">Username</label>
+                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg"  placeholder="Username" formControlName="username"/>
+                  <small class="text-danger" *ngIf="username && username.invalid && username.touched" >required</small>
+                  
+                </div>
+    
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="typePasswordX-2">Password</label>
+                  <input type="password" id=" typePasswordX-2" class="form-control form-control-lg" placeholder="Password" formControlName="password"/>
+                  <small class="text-danger" *ngIf="password && password.invalid && password.touched" >required</small>
+                </div>
+
+                <div class="form-outline mb-4">
+                  <label class="form-label" for="typePasswordX-2">Re-Password</label>
+                  <input [class.is-invalid]="signupForm.errors?.misMatch" type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Re-Password" formControlName="repassword"  />
+                  <small class="text-danger" *ngIf="repassword && repassword.invalid && repassword.touched">required</small>
+                  <small class="text-danger" *ngIf="signupForm.errors?.misMatch">Password misMatch</small>
+                </div>
+  
+  
+                <button  [disabled]="signupForm.invalid"  class="btn btn-primary btn-lg btn-block" routerLink="../dashboard" type="submit">Sign Up</button>
+    
+                <hr class="my-4">
+    
+                <button class="btn btn-lg btn-block btn-primary" routerLink="../login" style="background-color: #dd4b39;" type="submit"><i class="fab fa-google me-2"></i>If already have an account ? Log In</button>
+              </form>
+  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
