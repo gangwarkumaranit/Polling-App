@@ -10,14 +10,14 @@
                 <div class="form-outline mb-4">
                   <label class="form-label" for="typeEmailX-2">Username</label>
                   <input type="email" id="typeEmailX-2" class="form-control form-control-lg"  placeholder="Username" formControlName="username"/>
-                  <small class="text-danger" *ngIf="username && username.invalid && username.touched" >required</small>
+                  <small class="text-danger" *ngIf="username && username.invalid && username.touched" >Username is required</small>
                   
                 </div>
     
                 <div class="form-outline mb-4">
                   <label class="form-label" for="typePasswordX-2">Password</label>
                   <input type="password" id=" typePasswordX-2" class="form-control form-control-lg" placeholder="Password" formControlName="password"/>
-                  <small class="text-danger" *ngIf="password && password.invalid && password.touched" >required</small>
+                  <small class="text-danger" *ngIf="password && password.invalid && password.touched" >password is required</small>
                 </div>
 
                 <div class="form-outline mb-4">
