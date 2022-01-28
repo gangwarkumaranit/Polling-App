@@ -10,10 +10,12 @@ import { LoginService } from "./login.services"
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  
   loginForm= new FormGroup({
     username: new FormControl('',Validators.required),
-    password: new FormControl('',Validators.required)
+    password: new FormControl('',Validators.required),
   })
+  showme = false;
   get username(){
     return this.loginForm.get('username');
   }
@@ -32,7 +34,7 @@ export class LoginComponent implements OnInit {
         this._router.navigate (['../dashboard']);
       }
       else{
-        alert("user does not exists");
+        this.showme=true;
       }
     }) 
     }

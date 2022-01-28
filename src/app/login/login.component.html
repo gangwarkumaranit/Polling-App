@@ -7,9 +7,12 @@
   
               <h3 class="mb-5">Log In</h3>
               <form [formGroup]=loginForm>
+                <div *ngIf="showme" class="alert alert-danger" role="alert">
+                  user does not exists !
+                </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="typeEmailX-2">Username</label>
-                  <input username="" type="email" id="typeEmailX-2" class="form-control form-control-lg" formControlName="username" placeholder="Username" />
+                  <input type="email" id="typeEmailX-2" class="form-control form-control-lg" formControlName="username" placeholder="Username" />
                   
                   <small class="text-danger" *ngIf="username && username.invalid && username.touched" >Username is required</small>
                   
@@ -18,7 +21,7 @@
     
                 <div class="form-outline mb-4">
                   <label class="form-label" for="typePasswordX-2">Password</label>
-                  <input password="" type="password" id="typePasswordX-2" class="form-control form-control-lg" formControlName="password" placeholder="Password" />
+                  <input type="password" id="typePasswordX-2" class="form-control form-control-lg" formControlName="password" placeholder="Password" />
                  
                   <small class="text-danger" *ngIf="password && password.invalid && password.touched" >password is required</small>
                 </div>
