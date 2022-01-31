@@ -7,6 +7,9 @@
   
               <h3 class="mb-4">Sign Up</h3>
               <form [formGroup]=signupForm>
+                <div *ngIf="showme" class="alert alert-danger" role="alert">
+                  Account Already Exists!
+                </div>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="typeEmailX-2">Username</label>
                   <input type="email" id="typeEmailX-2" class="form-control form-control-lg"  placeholder="Username" formControlName="username"/>
