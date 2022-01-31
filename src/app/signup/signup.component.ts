@@ -14,9 +14,9 @@ export class SignupComponent implements OnInit {
     username: new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required]),
     repassword: new FormControl('',[Validators.required]),
-    role: new FormControl('admin')
+    role: new FormControl('')
   },{validators: PasswordValidator});
-
+  
  get username(){
    return this.signupForm.get('username');
  }
@@ -35,9 +35,7 @@ export class SignupComponent implements OnInit {
     this.signupService.signup(this.signupForm.value.username, this.signupForm.value.password,this.signupForm.value.role).subscribe((data: any)=>{
       console.log(data,this.signupForm.value);
       localStorage.setItem('token',data.token);
-      if(data.token){
-        this._router.navigate(['../login'])
-      }
+      this._router.navigate(['../login'])
     }
     )
 }

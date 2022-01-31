@@ -1,17 +1,25 @@
-<section class="vh-100" style="background-color: #508bfc;">
+<section style="background-color: #508bfc;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
           <div class="card shadow-2-strong" style="border-radius: 1rem;">
             <div class="card-body p-4 text-center">
   
-              <h3 class="mb-0">Sign Up</h3>
+              <h3 class="mb-4">Sign Up</h3>
               <form [formGroup]=signupForm>
                 <div class="form-outline mb-4">
                   <label class="form-label" for="typeEmailX-2">Username</label>
                   <input type="email" id="typeEmailX-2" class="form-control form-control-lg"  placeholder="Username" formControlName="username"/>
                   <small class="text-danger" *ngIf="username && username.invalid && username.touched" >Username is required</small>
-                  
+                </div>
+
+                <div>
+                  <label class="form-label" for="typeinputStateX-2" htmlfor="inputState">Role</label>
+                  <select id="inputState" formControlName="role" class="form-select form-control form-control-lg mb-4">
+                    <option value="choose...">Choose...</option>
+                    <option value="user">user</option>
+                    <option value="admin">admin</option>
+                  </select>
                 </div>
     
                 <div class="form-outline mb-4">
