@@ -3,6 +3,8 @@ import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { PasswordValidator } from '../shared/password.validator';
 import { SignupService } from './signup.service';
 import { Router } from '@angular/router'
+import { LoginService } from '../login/login.services';
+
 
 @Component({
   selector: 'app-signup',
@@ -19,7 +21,7 @@ export class SignupComponent implements OnInit {
 
   showme = false;
   loginForm: any;
-  loginService: any;
+  LoginService: any;
 
   get username() {
     return this.signupForm.get('username');
@@ -31,7 +33,7 @@ export class SignupComponent implements OnInit {
     return this.signupForm.get('repassword');
   }
 
-  constructor(private signupService: SignupService, private _router: Router) { }
+  constructor(private signupService: SignupService,private loginService: LoginService, private _router: Router) { }
 
   ngOnInit(): void {
   }
@@ -45,10 +47,12 @@ export class SignupComponent implements OnInit {
       }
 
      else {
-        const res = this.loginService.login(this.loginForm.value.username, this.loginForm.value.password);
-        if (data.token) {
-          this._router.navigate (['../dashboard']);
-        }
+        this.loginService.login(this.signupForm.value.username, this.signupForm.value.password).subscribe((logindata: any)=>{
+          if (logindata.token) {
+            this._router.navigate (['../dashboard']);
+          }
+        });
+        
       }
     }
 
