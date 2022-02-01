@@ -11,13 +11,13 @@
                   Account Already Exists!
                 </div>
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="typeEmailX-2">Username</label>
+                  <div class="text-left mb-3">Username</div>
                   <input type="email" id="typeEmailX-2" class="form-control form-control-lg"  placeholder="Username" formControlName="username"/>
                   <small class="text-danger" *ngIf="username && username.invalid && username.touched" >Username is required</small>
                 </div>
 
                 <div>
-                  <label class="form-label" for="typeinputStateX-2" htmlfor="inputState">Role</label>
+                  <div class="text-left mb-3">Role</div>
                   <select id="inputState" formControlName="role" class="form-select form-control form-control-lg mb-4">
                     <option value="choose...">Choose...</option>
                     <option value="user">user</option>
@@ -26,13 +26,13 @@
                 </div>
     
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="typePasswordX-2">Password</label>
+                  <div class="text-left mb-3">Password</div>
                   <input type="password" id=" typePasswordX-2" class="form-control form-control-lg" placeholder="Password" formControlName="password"/>
                   <small class="text-danger" *ngIf="password && password.invalid && password.touched" >password is required</small>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <label class="form-label" for="typePasswordX-2">Re-Password</label>
+                  <div class="text-left mb-3">Re-Password</div>
                   <input [class.is-invalid]="signupForm.errors?.misMatch" type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Re-Password" formControlName="repassword"  />
                   <small class="text-danger" *ngIf="repassword && repassword.invalid && repassword.touched">required</small>
                   <small class="text-danger" *ngIf="signupForm.errors?.misMatch">Password misMatch</small>

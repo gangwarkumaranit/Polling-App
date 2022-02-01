@@ -10,13 +10,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersComponent } from './users/users.component';
+import { CreatepollComponent } from './createpoll/createpoll.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     SignupComponent,
-    DashboardComponent
+    DashboardComponent,
+    UsersComponent,
+    CreatepollComponent
   ],
   imports: [
     BrowserModule,
