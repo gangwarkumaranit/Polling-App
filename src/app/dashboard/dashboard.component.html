@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
     <a class="navbar-brand text-white" href="#">Polling App</a>
     <button type="button" click="user()" routerLink="../users" class="btn btn-secondary">Users List</button>
@@ -8,4 +9,16 @@
     
     
   </nav>
+ 
 
+  <div class="container mt-sm-5 my-1 ml-5">
+    <div class="question ml-sm-5 pl-sm-5 pt-2" *ngFor="let item of data">
+        <div class="py-2 h5"><b>{{item['title']}}</b></div>
+        <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options" *ngFor="let item of item['options']"> 
+          <input type="radio" name="radio"> 
+          <span class="checkmark"></span> 
+          <label class="options">{{item['option']}}</label>
+        </div>
+    </div>
+    
+</div>
