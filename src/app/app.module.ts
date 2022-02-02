@@ -12,6 +12,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
 import { CreatepollComponent } from './createpoll/createpoll.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CreatepollComponent } from './createpoll/createpoll.component';
     SignupComponent,
     DashboardComponent,
     UsersComponent,
-    CreatepollComponent
+    CreatepollComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,9 @@ import { CreatepollComponent } from './createpoll/createpoll.component';
     ReactiveFormsModule,
     HttpClientModule,
 
+  ],
+  exports:[
+    HeaderComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
