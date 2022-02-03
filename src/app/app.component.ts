@@ -23,6 +23,9 @@ export class AppComponent {
  if(isLoggedIn){
   isLoggedIn: true;
  }
+ else{
+   isLoggedIn: false;
+ }
  }
 
  }
