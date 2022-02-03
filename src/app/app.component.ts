@@ -8,4 +8,22 @@ import { FormControl,FormGroup,Validator } from '@angular/forms'
 })
 export class AppComponent {
   title = 'pollingapp';
-}
+
+
+  isLoggedIn: boolean = true;
+
+  ngOnInit(): void {
+  this.checkUser();
+  }
+
+
+
+ checkUser(){
+ let isLoggedIn = localStorage.getItem('token');
+ if(isLoggedIn){
+  isLoggedIn: true;
+ }
+ }
+
+ }
+

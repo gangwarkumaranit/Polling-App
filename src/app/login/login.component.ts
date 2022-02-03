@@ -25,6 +25,7 @@ export class LoginComponent implements OnInit {
   constructor(private loginService: LoginService, private _router: Router) { }
 
   ngOnInit(): void {
+  
   }
   login(){
     this.loginService.login(this.loginForm.value.username, this.loginForm.value.password).subscribe((data: any)=>{

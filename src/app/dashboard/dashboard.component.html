@@ -1,15 +1,42 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-center row">
+      <div class="col-md-10 col-lg-10">
+          <div class="border">
+              <div class="question bg-white p-3 border-bottom">
+                  <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                      <h1>MCQ Quiz</h1><span></span>
+                  </div>
+              </div>
+              <div class="question bg-white p-3 border-bottom"  *ngFor="let item of data">
+                  <div class="d-flex flex-row align-items-center question-title" >
+                      <h3>Q.</h3>
+                      <h5 class="mt-1 ml-2">{{item['title']}} ?</h5>
+                  </div>
+                  <div class="ans ml-2" *ngFor="let item of item['options']">
+                    <input type="radio" name="radio" class="mr-2">
+                    <span class="checkmark"></span>  
+                    <label class="radio"> {{item['option']}}</label>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
 
 
- 
 
-  <div class="container mt-sm-5 my-1 ml-5">
+
+
+<div class="d-flex justify-content-center">
+  <div class="container mt-sm-5 my-1 ">
     <div class="question ml-sm-5 pl-sm-5 pt-2" *ngFor="let item of data">
-        <div class="py-2 h5"><b>{{item['title']}}</b></div>
-        <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options" *ngFor="let item of item['options']"> 
-          <input type="radio" name="radio"> 
-          <span class="checkmark"></span> 
-          <label class="options">{{item['option']}}</label>
+        <div class="py-2 h5"><b>Q. {{item['title']}} ?</b></div>
+        <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options" *ngFor="let item of item['options']">
+           <label class="options">{{item['option']}} 
+             <input type="radio" name="radio"> 
+             <span class="checkmark"></span> 
+            </label> 
         </div>
     </div>
-    
 </div>
+  
