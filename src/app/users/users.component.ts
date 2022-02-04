@@ -1,30 +1,39 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { OnInit } from '@angular/core';
 import { UserService } from './user.service';
-
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  [x: string]: any;
-  data= [];
+
+  displayedColumns: string[] = ['username', 'role'];
+  dataSource!: MatTableDataSource<any>;
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  getUserList: any;
 
   constructor(private userService: UserService) { 
-    
+  
      
       }
 
   ngOnInit(): void {
-    this.user();
+    this.getUsersList();
   }
-  user () { this.userService.getData().subscribe(  (data: any)=> {
-    console.log(data);
-    this.data=data.data;
-      })
-    }
   
-
+  getUsersList() {
+    this.userService.getData().subscribe((data: any) => {
+      this.dataSource = new MatTableDataSource(data.data);
+      this.dataSource.paginator = this.paginator;
+      this.dataSource.sort = this.sort;
+    })
+  }
+ 
 }
-
 

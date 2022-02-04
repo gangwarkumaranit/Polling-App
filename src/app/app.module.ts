@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -13,7 +12,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersComponent } from './users/users.component';
 import { CreatepollComponent } from './createpoll/createpoll.component';
 import { HeaderComponent } from './header/header.component';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import { HeaderComponent } from './header/header.component';
     DashboardComponent,
     UsersComponent,
     CreatepollComponent,
-    HeaderComponent
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,7 +32,9 @@ import { HeaderComponent } from './header/header.component';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
   exports:[
     HeaderComponent
