@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl,FormGroup,Validator } from '@angular/forms'
-
+import { FormControl, FormGroup, Validator } from '@angular/forms'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,25 +7,20 @@ import { FormControl,FormGroup,Validator } from '@angular/forms'
 })
 export class AppComponent {
   title = 'pollingapp';
-
-
   isLoggedIn: boolean = true;
 
   ngOnInit(): void {
-  this.checkUser();
+    this.checkUser();
   }
 
-
-
- checkUser(){
- let isLoggedIn = localStorage.getItem('token');
- if(isLoggedIn){
-  isLoggedIn: true;
- }
- else{
-   isLoggedIn: false;
- }
- }
-
- }
+  checkUser() {
+    let isLoggedIn = localStorage.getItem('token');
+    if (isLoggedIn) {
+      isLoggedIn: true;
+    }
+    else {
+      isLoggedIn: false;
+    }
+  }
+}
 

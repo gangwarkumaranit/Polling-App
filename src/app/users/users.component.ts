@@ -18,15 +18,10 @@ export class UsersComponent implements OnInit {
   @ViewChild(MatSort) sort!: MatSort;
   getUserList: any;
 
-  constructor(private userService: UserService) { 
-  
-     
-      }
-
+  constructor(private userService: UserService) { }
   ngOnInit(): void {
     this.getUsersList();
   }
-  
   getUsersList() {
     this.userService.getData().subscribe((data: any) => {
       this.dataSource = new MatTableDataSource(data.data);
@@ -34,6 +29,8 @@ export class UsersComponent implements OnInit {
       this.dataSource.sort = this.sort;
     })
   }
- 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 }
-

@@ -7,14 +7,13 @@ import { SignupComponent } from './signup/signup.component';
 import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
-  {path:'',redirectTo:'login',pathMatch:'full'},
-  {path:'login',component:LoginComponent},
-  {path:'signup',component:SignupComponent},
-  {path:'dashboard',component:DashboardComponent},
-  {path: 'users',component:UsersComponent},
-  {path: 'createpoll',component:CreatepollComponent}
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'users', component: UsersComponent },
+  { path: 'createpoll', component: CreatepollComponent }
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

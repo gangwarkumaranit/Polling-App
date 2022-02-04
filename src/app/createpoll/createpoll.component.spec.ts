@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { CreatepollComponent } from './createpoll.component';
 
 describe('CreatepollComponent', () => {
@@ -8,9 +7,9 @@ describe('CreatepollComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CreatepollComponent ]
+      declarations: [CreatepollComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
