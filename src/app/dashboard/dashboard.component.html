@@ -8,15 +8,7 @@
                     </div>
                 </div>
                 <div class="question bg-white p-3 border-bottom" *ngFor="let item of data">
-                    <div class="d-flex flex-row align-items-center question-title">
-                        <h3>Q.</h3>
-                        <h5 class="mt-1 ml-2">{{item['title']}} ?</h5>
-                    </div>
-                    <div class="ans ml-2" *ngFor="let item of item['options']">
-                        <input type="radio" name="radio" class="mr-2">
-                        <span class="checkmark"></span>
-                        <label class="radio"> {{item['option']}}</label>
-                    </div>
+                    <app-poll [poll]="item"></app-poll>  
                 </div>
             </div>
         </div>

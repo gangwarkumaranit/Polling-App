@@ -16,7 +16,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input'
+import { MatInputModule } from '@angular/material/input';
+import { PollComponent } from './poll/poll.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +27,7 @@ import { MatInputModule } from '@angular/material/input'
     UsersComponent,
     CreatepollComponent,
     HeaderComponent,
+    PollComponent,
   ],
   imports: [
     BrowserModule,
