@@ -14,12 +14,12 @@ export class AppComponent {
   }
 
   checkUser() {
-    let isLoggedIn = localStorage.getItem('token');
-    if (isLoggedIn) {
-      isLoggedIn: true;
+    let token = localStorage.getItem('token');
+    if (token) {
+      this.isLoggedIn= true;
     }
     else {
-      isLoggedIn: false;
+      this.isLoggedIn= false;
     }
   }
 }
